@@ -1,6 +1,8 @@
 # postgresql box
 
-postgresql
+[![wercker status](https://app.wercker.com/status/6413c634a4c10e6e20b1842545a5eefd/m/ "wercker status")](https://app.wercker.com/project/bykey/6413c634a4c10e6e20b1842545a5eefd)
+
+postgresql 9.3 Service box
 
 # What's new
 
@@ -10,7 +12,7 @@ postgresql
 
 The MIT License (MIT)
 
-Copyright (c) 2013 wercker
+Copyright (c) 2013 Garrow Bedrossian
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -30,6 +32,11 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 # Changelog
+
+## 00.12
+
+- Switch to *only* chef for package installation.
+- Bump postgresql cookbook version to 3.3.4
 
 ## 0.0.4
 

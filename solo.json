@@ -11,7 +11,7 @@
     "dir" : "/etc/postgresql/9.3/main",
     "server" : { "packages": ["postgresql-9.3"] },
     "ssl" : false,
-    "config" : { 
+    "config" : {
       "listen_addresses" : "*",
       "ssl_key_file" : "/etc/ssl/private/ssl-cert-snakeoil.key",
       "ssl_cert_file" : "/etc/ssl/certs/ssl-cert-snakeoil.pem",
@@ -21,15 +21,16 @@
       "external_pid_file" : "/var/run/postgresql/9.3-main.pid"
       },
     "pg_hba" : [
-      { "comment" : "# wercker: allow all", 
+      { "comment" : "# wercker: allow all",
       "type" : "host" , "db" :"all", "user" : "all", "addr" : "0.0.0.0/0", "method" : "md5"},
-      { "comment" : "# wercker: allow all ip6", 
+      { "comment" : "# wercker: allow all ip6",
       "type" : "host" , "db" :"all", "user" : "all", "addr" : "::1/128", "method" : "md5"}]
 
   },
   "run_list":[
     "recipe[apt]",
     "recipe[postgresql::apt_pgdg_postgresql]",
-    "recipe[postgresql::server]"
+    "recipe[postgresql::server]",
+    "recipe[postgresql::client]"
   ]
 }
