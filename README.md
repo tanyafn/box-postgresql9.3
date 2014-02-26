@@ -33,7 +33,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 # Changelog
 
-## 00.12
+## 00.13
 
 - Switch to *only* chef for package installation.
 - Bump postgresql cookbook version to 3.3.4
