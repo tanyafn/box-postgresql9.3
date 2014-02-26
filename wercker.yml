@@ -1,4 +1,4 @@
-box : wercker/ubuntu12.04-ruby1.9.3-berkshelf1
+box : wercker/default
 build :
   steps :
     - validate-wercker-box
