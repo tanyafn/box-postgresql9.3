@@ -1,5 +1,5 @@
 name: postgresql9.3
-version: 0.0.7
+version: 0.0.12
 inherits: wercker/ubuntu12.04-chef10.18.2@0.0.8
 type: service
 platform: ubuntu@12.04
@@ -16,9 +16,12 @@ script: |
   rm -rf /var/lib/postgresql
 
   sudo chef-solo -c $WERCKER_SOURCE_DIR/solo.rb -j $WERCKER_SOURCE_DIR/solo.json -l debug
-  sudo apt-get install  postgresql-contrib-9.3
+  #  sudo apt-get install postgresql-9.3 postgresql-contrib-9.3
   export PGPASSWORD=wercker
   echo "CREATE DATABASE werckerdb1;" | psql -U postgres -h 127.0.0.1
+
+  pg_dump --version
+  psql --version
 
 env:
   WERCKER_POSTGRESQL_USERNAME: postgres
