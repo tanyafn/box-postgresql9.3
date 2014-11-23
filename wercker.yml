@@ -7,4 +7,4 @@ build :
           cd $WERCKER_ROOT
           sudo gem install chef --no-ri --no-rdoc
           sudo gem install berkshelf --no-ri --no-rdoc
-          berks install -p cookbooks
+          berks vendor
