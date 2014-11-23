@@ -15,7 +15,7 @@ script: |
   rm -rf /etc/postgresql-common
   rm -rf /var/lib/postgresql
 
-  # sudo chef-solo -c $WERCKER_SOURCE_DIR/solo.rb -j $WERCKER_SOURCE_DIR/solo.json -l debug
+  sudo chef-solo -c $WERCKER_SOURCE_DIR/solo.rb -j $WERCKER_SOURCE_DIR/solo.json -l debug
   echo "Adding sources list"
   sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
 
@@ -25,7 +25,7 @@ script: |
   sudo apt-get update
 
   sudo apt-get install postgresql-contrib
-  #export PGPASSWORD=wercker
+  export PGPASSWORD=wercker
   echo "CREATE DATABASE werckerdb1;" | psql -U postgres -h 127.0.0.1
 
   pg_dump --version
@@ -33,8 +33,8 @@ script: |
 
 env:
   WERCKER_POSTGRESQL_USERNAME: postgres
-  WERCKER_POSTGRESQL_PASSWORD: 
+  WERCKER_POSTGRESQL_PASSWORD: wercker
   WERCKER_POSTGRESQL_PORT: 5432
   WERCKER_POSTGRESQL_DATABASE: werckerdb1
-  WERCKER_POSTGRESQL_URL: postgres://postgres:@$$HOST$$:5432/werckerdb1
+  WERCKER_POSTGRESQL_URL: postgres://postgres:wercker@$$HOST$$:5432/werckerdb1
   WERCKER_POSTGRESQL_HOST: $$HOST$$
