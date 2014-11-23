@@ -5,3 +5,4 @@ build :
         name : install cookbooks
         code : |
           cd $WERCKER_ROOT
+          sudo gem install chef --no-ri --no-rdoc
