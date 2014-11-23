@@ -5,4 +5,5 @@ build :
         name : install cookbooks
         code : |
           cd $WERCKER_ROOT
+          gem install chef
           berks install -p cookbooks
